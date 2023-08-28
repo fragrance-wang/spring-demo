@@ -1,0 +1,40 @@
+https://bugstack.cn/md/spring/develop-spring/2021-05-20-%E7%AC%AC2%E7%AB%A0%EF%BC%9A%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80%EF%BC%8C%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Bean%E5%AE%B9%E5%99%A8.html
+
+
+small-spring-step-01
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework
+    │           ├── BeanDefinition.java
+    │           └── BeanFactory.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   └── UserService.java
+                └── ApiTest.java
+
+small-spring-step-02
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework.beans
+    │           ├── factory
+    │           │   ├── config
+    │           │   │   ├── BeanDefinition.java
+    │           │   │   └── SingletonBeanRegistry.java
+    │           │   ├── support
+    │           │   │   ├── AbstractAutowireCapableBeanFactory.java
+    │           │   │   ├── AbstractBeanFactory.java
+    │           │   │   ├── BeanDefinitionRegistry.java
+    │           │   │   ├── DefaultListableBeanFactory.java
+    │           │   │   └── DefaultSingletonBeanRegistry.java
+    │           │   └── BeanFactory.java
+    │           └── BeansException.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   └── UserService.java
+                └── ApiTest.java

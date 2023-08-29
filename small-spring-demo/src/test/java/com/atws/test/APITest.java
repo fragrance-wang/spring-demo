@@ -26,7 +26,7 @@ public class APITest {
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.queryUserInfo();*/
 
-        // 1.初始化 BeanFactory
+      /*  // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         // 2.注册 bean
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
@@ -36,7 +36,19 @@ public class APITest {
         userService.queryUserInfo();
         // 4.第二次获取 bean from Singleton
         UserService userService_singleton = (UserService) beanFactory.getBean("userService");
-        userService_singleton.queryUserInfo();
+        userService_singleton.queryUserInfo();*/
+
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2. 注入bean
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        beanFactory.registerBeanDefinition("userService", beanDefinition);
+
+        // 3.获取bean
+        UserService userService = (UserService) beanFactory.getBean("userService", "小傅哥");
+        System.out.println(userService.toString());
+        userService.queryUserInfo();
 
     }
 

@@ -158,7 +158,71 @@ small-spring-step-05
                 │   └── UserService.java
                 └── ApiTest.java
 
-
+# 为了能满足于在 Bean 对象从注册到实例化的过程中执行用户的自定义操作，
+# 就需要在 Bean 的定义和初始化过程中插入接口类，这个接口再有外部去实现自己需要的服务。
+# 那么在结合对 Spring 框架上下文的处理能力，就可以满足我们的目标需求了。
+small-spring-step-06
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework
+    │           ├── beans
+    │           │   ├── factory
+    │           │   │   ├── config
+    │           │   │   │   ├── AutowireCapableBeanFactory.java
+    │           │   │   │   ├── BeanDefinition.java
+    │           │   │   │   ├── BeanFactoryPostProcessor.java
+    │           │   │   │   ├── BeanPostProcessor.java
+    │           │   │   │   ├── BeanReference.java
+    │           │   │   │   ├── ConfigurableBeanFactory.java
+    │           │   │   │   └── SingletonBeanRegistry.java
+    │           │   │   ├── support
+    │           │   │   │   ├── AbstractAutowireCapableBeanFactory.java
+    │           │   │   │   ├── AbstractBeanDefinitionReader.java
+    │           │   │   │   ├── AbstractBeanFactory.java
+    │           │   │   │   ├── BeanDefinitionReader.java
+    │           │   │   │   ├── BeanDefinitionRegistry.java
+    │           │   │   │   ├── CglibSubclassingInstantiationStrategy.java
+    │           │   │   │   ├── DefaultListableBeanFactory.java
+    │           │   │   │   ├── DefaultSingletonBeanRegistry.java
+    │           │   │   │   ├── InstantiationStrategy.java
+    │           │   │   │   └── SimpleInstantiationStrategy.java
+    │           │   │   ├── support
+    │           │   │   │   └── XmlBeanDefinitionReader.java
+    │           │   │   ├── BeanFactory.java
+    │           │   │   ├── ConfigurableListableBeanFactory.java
+    │           │   │   ├── HierarchicalBeanFactory.java
+    │           │   │   └── ListableBeanFactory.java
+    │           │   ├── BeansException.java
+    │           │   ├── PropertyValue.java
+    │           │   └── PropertyValues.java
+    │           ├── context
+    │           │   ├── support
+    │           │   │   ├── AbstractApplicationContext.java
+    │           │   │   ├── AbstractRefreshableApplicationContext.java
+    │           │   │   ├── AbstractXmlApplicationContext.java
+    │           │   │   └── ClassPathXmlApplicationContext.java
+    │           │   ├── ApplicationContext.java
+    │           │   └── ConfigurableApplicationContext.java
+    │           ├── core.io
+    │           │   ├── ClassPathResource.java
+    │           │   ├── DefaultResourceLoader.java
+    │           │   ├── FileSystemResource.java
+    │           │   ├── Resource.java
+    │           │   ├── ResourceLoader.java
+    │           │   └── UrlResource.java
+    │           └── utils
+    │               └── ClassUtils.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   ├── UserDao.java
+                │   └── UserService.java
+                ├── common
+                │   ├── MyBeanFactoryPostProcessor.java
+                │   └── MyBeanPostProcessor.java
+                └── ApiTest.java
 
 
 

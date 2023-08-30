@@ -224,8 +224,72 @@ small-spring-step-06
                 │   └── MyBeanPostProcessor.java
                 └── ApiTest.java
 
+# 在 spring.xml 配置中添加 init-method、destroy-method 两个注解，在配置文件加载的过程中，把注解配置一并定义到 BeanDefinition 的属性当中。
+# 这样在 initializeBean 初始化操作的工程中，就可以通过反射的方式来调用配置在 Bean 定义属性当中的方法信息了。
+# 另外如果是接口实现的方式，那么直接可以通过 Bean 对象调用对应接口定义的方法即可，((InitializingBean) bean).afterPropertiesSet()，两种方式达到的效果是一样的。
 
-
+small-spring-step-07
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework
+    │           ├── beans
+    │           │   ├── factory
+    │           │   │   ├── config
+    │           │   │   │   ├── AutowireCapableBeanFactory.java
+    │           │   │   │   ├── BeanDefinition.java
+    │           │   │   │   ├── BeanFactoryPostProcessor.java
+    │           │   │   │   ├── BeanPostProcessor.java
+    │           │   │   │   ├── BeanReference.java
+    │           │   │   │   ├── ConfigurableBeanFactory.java
+    │           │   │   │   └── SingletonBeanRegistry.java
+    │           │   │   ├── support
+    │           │   │   │   ├── AbstractAutowireCapableBeanFactory.java
+    │           │   │   │   ├── AbstractBeanDefinitionReader.java
+    │           │   │   │   ├── AbstractBeanFactory.java
+    │           │   │   │   ├── BeanDefinitionReader.java
+    │           │   │   │   ├── BeanDefinitionRegistry.java
+    │           │   │   │   ├── CglibSubclassingInstantiationStrategy.java
+    │           │   │   │   ├── DefaultListableBeanFactory.java
+    │           │   │   │   ├── DefaultSingletonBeanRegistry.java
+    │           │   │   │   ├── DisposableBeanAdapter.java
+    │           │   │   │   ├── InstantiationStrategy.java
+    │           │   │   │   └── SimpleInstantiationStrategy.java
+    │           │   │   ├── support
+    │           │   │   │   └── XmlBeanDefinitionReader.java
+    │           │   │   ├── BeanFactory.java
+    │           │   │   ├── ConfigurableListableBeanFactory.java
+    │           │   │   ├── DisposableBean.java
+    │           │   │   ├── HierarchicalBeanFactory.java
+    │           │   │   ├── InitializingBean.java
+    │           │   │   └── ListableBeanFactory.java
+    │           │   ├── BeansException.java
+    │           │   ├── PropertyValue.java
+    │           │   └── PropertyValues.java
+    │           ├── context
+    │           │   ├── support
+    │           │   │   ├── AbstractApplicationContext.java
+    │           │   │   ├── AbstractRefreshableApplicationContext.java
+    │           │   │   ├── AbstractXmlApplicationContext.java
+    │           │   │   └── ClassPathXmlApplicationContext.java
+    │           │   ├── ApplicationContext.java
+    │           │   └── ConfigurableApplicationContext.java
+    │           ├── core.io
+    │           │   ├── ClassPathResource.java
+    │           │   ├── DefaultResourceLoader.java
+    │           │   ├── FileSystemResource.java
+    │           │   ├── Resource.java
+    │           │   ├── ResourceLoader.java
+    │           │   └── UrlResource.java
+    │           └── utils
+    │               └── ClassUtils.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   ├── UserDao.java
+                │   └── UserService.java
+                └── ApiTest.java
 
 
 

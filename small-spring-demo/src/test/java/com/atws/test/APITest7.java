@@ -1,11 +1,7 @@
 package com.atws.test;
 
-import com.atws.beans.factory.support.DefaultListableBeanFactory;
-import com.atws.beans.factory.xml.XmlBeanDefinitionReader;
 import com.atws.context.support.ClassPathXmlApplicationContext;
-import com.atws.test.bean.UserService;
-import com.atws.test.common.MyBeanFactoryPostProcessor;
-import com.atws.test.common.MyBeanPostProcessor;
+import com.atws.test.bean.UserService1;
 import org.junit.Test;
 
 /**
@@ -37,8 +33,8 @@ public class APITest7 {
         applicationContext.registerShutdownHook();
 
         // 2. 获取Bean对象调用方法
-        UserService userService = applicationContext.getBean("userService", UserService.class);
-        String result = userService.queryUserInfo();
+        UserService1 userService1 = applicationContext.getBean("userService", UserService1.class);
+        String result = userService1.queryUserInfo();
         System.out.println("测试结果：" + result);
     }
 

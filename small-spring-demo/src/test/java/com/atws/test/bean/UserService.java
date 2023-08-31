@@ -1,28 +1,51 @@
 package com.atws.test.bean;
 
-import com.atws.beans.factory.DisposableBean;
-import com.atws.beans.factory.InitializingBean;
 import lombok.Data;
 
-@Data
-public class UserService implements InitializingBean, DisposableBean {
+/**
+ * @author wangshan
+ * @date 2023-08-31 19:13
+ */
+public class UserService {
 
     private String uId;
     private String company;
     private String location;
-    private UserDao userDao;
+    private IUserDao userDao;
 
     public String queryUserInfo() {
-        return userDao.queryUserName(uId)+", 公司："+company+", 地点"+location;
+        return userDao.queryUserName(uId) + "," + company + "," + location;
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("执行：UserService.destroy");
+    public String getuId() {
+        return uId;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("执行：UserService.afterPropertiesSet");
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public IUserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(IUserDao userDao) {
+        this.userDao = userDao;
     }
 }

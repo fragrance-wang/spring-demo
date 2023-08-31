@@ -1,19 +1,12 @@
 package com.atws.test;
 
-import cn.hutool.core.io.IoUtil;
 import com.atws.beans.factory.support.DefaultListableBeanFactory;
 import com.atws.beans.factory.xml.XmlBeanDefinitionReader;
 import com.atws.context.support.ClassPathXmlApplicationContext;
-import com.atws.core.io.DefaultResourceLoader;
-import com.atws.core.io.Resource;
-import com.atws.test.bean.UserService;
+import com.atws.test.bean.UserService1;
 import com.atws.test.common.MyBeanFactoryPostProcessor;
 import com.atws.test.common.MyBeanPostProcessor;
-import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * @author wangshan
@@ -44,8 +37,8 @@ public class APITest6 {
         beanFactory.addBeanPostProcessor(beanPostProcessor);
 
         // 5. 获取Bean对象调用方法
-        UserService userService = beanFactory.getBean("userService", UserService.class);
-        String result = userService.queryUserInfo();
+        UserService1 userService1 = beanFactory.getBean("userService", UserService1.class);
+        String result = userService1.queryUserInfo();
         System.out.println("测试结果：" + result);
     }
 
@@ -61,8 +54,8 @@ public class APITest6 {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:springPostProcessor.xml");
 
         // 2. 获取Bean对象调用方法
-        UserService userService = applicationContext.getBean("userService", UserService.class);
-        String result = userService.queryUserInfo();
+        UserService1 userService1 = applicationContext.getBean("userService", UserService1.class);
+        String result = userService1.queryUserInfo();
         System.out.println("测试结果：" + result);
     }
 

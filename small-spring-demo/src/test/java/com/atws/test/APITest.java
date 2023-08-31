@@ -3,11 +3,10 @@ package com.atws.test;
 import com.atws.beans.PropertyValue;
 import com.atws.beans.PropertyValues;
 import com.atws.beans.factory.config.BeanDefinition;
-import com.atws.beans.factory.BeanFactory;
 import com.atws.beans.factory.config.BeanReference;
 import com.atws.beans.factory.support.DefaultListableBeanFactory;
 import com.atws.test.bean.UserDao;
-import com.atws.test.bean.UserService;
+import com.atws.test.bean.UserService1;
 import org.junit.Test;
 
 /**
@@ -31,12 +30,12 @@ public class APITest {
         propertyValues.addPropertyValue(new PropertyValue("userDao",new BeanReference("userDao")));
 
         // 4. UserService 注入bean
-        BeanDefinition beanDefinition = new BeanDefinition(UserService.class, propertyValues);
+        BeanDefinition beanDefinition = new BeanDefinition(UserService1.class, propertyValues);
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 5. UserService 获取bean
-        UserService userService = (UserService) beanFactory.getBean("userService");
-        userService.queryUserInfo();
+        UserService1 userService1 = (UserService1) beanFactory.getBean("userService");
+        userService1.queryUserInfo();
     }
 
 
@@ -70,13 +69,13 @@ public class APITest {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
         // 2. 注入bean
-        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        BeanDefinition beanDefinition = new BeanDefinition(UserService1.class);
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 3.获取bean
-        UserService userService = (UserService) beanFactory.getBean("userService", "小傅哥");
-        System.out.println(userService.toString());
-        userService.queryUserInfo();
+        UserService1 userService1 = (UserService1) beanFactory.getBean("userService", "小傅哥");
+        System.out.println(userService1.toString());
+        userService1.queryUserInfo();
 
     }
 

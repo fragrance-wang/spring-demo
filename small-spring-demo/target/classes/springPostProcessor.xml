@@ -3,7 +3,7 @@
 
     <bean id="userDao" class="com.atws.test.bean.UserDao"/>
 
-    <bean id="userService" class="com.atws.test.bean.UserService">
+    <bean id="userService1" class="com.atws.test.bean.UserService1">
         <property name="uId" value="10001"/>
         <property name="company" value="腾讯"/>
         <property name="location" value="深圳"/>

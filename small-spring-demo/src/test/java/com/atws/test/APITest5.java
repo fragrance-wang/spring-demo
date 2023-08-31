@@ -5,7 +5,7 @@ import com.atws.beans.factory.support.DefaultListableBeanFactory;
 import com.atws.beans.factory.xml.XmlBeanDefinitionReader;
 import com.atws.core.io.DefaultResourceLoader;
 import com.atws.core.io.Resource;
-import com.atws.test.bean.UserService;
+import com.atws.test.bean.UserService1;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.IOException;
@@ -35,8 +35,8 @@ public class APITest5 {
         reader.loadBeanDefinitions("classpath:spring.xml");
 
         // 3. 获取Bean对象调用方法
-        UserService userService = beanFactory.getBean("userService", UserService.class);
-        String result = userService.queryUserInfo();
+        UserService1 userService1 = beanFactory.getBean("userService", UserService1.class);
+        String result = userService1.queryUserInfo();
         System.out.println("测试结果：" + result);
     }
 

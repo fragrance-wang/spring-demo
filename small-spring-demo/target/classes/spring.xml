@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
+
+    <bean id="userService" class="com.atws.test.bean.UserService" scope="prototype">
+        <property name="uId" value="10001"/>
+        <property name="company" value="腾讯"/>
+        <property name="location" value="深圳"/>
+        <property name="userDao" ref="proxyUserDao"/>
+    </bean>
+
+    <bean id="proxyUserDao" class="com.atws.test.bean.ProxyBeanFactory"/>
+
+
+
     <bean id="userDao" class="com.atws.test.bean.UserDao" init-method="initDataMethod" destroy-method="destroyDataMethod" />
 
-    <bean id="userService" class="com.atws.test.bean.UserService">
+    <bean id="userService1" class="com.atws.test.bean.UserService1">
         <property name="uId" value="10001"/>
         <property name="company" value="腾讯"/>
         <property name="location" value="深圳"/>
         <property name="userDao" ref="userDao"/>
     </bean>
-
 </beans>

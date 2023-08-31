@@ -7,6 +7,7 @@ import java.util.Map;
  * @author wangshan
  * @date 2023-08-29 11:40
  */
+@Deprecated
 public class UserDao {
     private static Map<String, String> hashMap = new HashMap<>();
 

@@ -521,9 +521,207 @@ small-spring-step-10
 
 
 
+small-spring-step-11
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework
+    │           ├── aop
+    │           │   ├── aspectj
+    │           │   │   └── AspectJExpressionPointcut.java
+    │           │   ├── framework
+    │           │   │   ├── AopProxy.java
+    │           │   │   ├── Cglib2AopProxy.java
+    │           │   │   ├── JdkDynamicAopProxy.java
+    │           │   │   └── ReflectiveMethodInvocation.java
+    │           │   ├── AdvisedSupport.java
+    │           │   ├── ClassFilter.java
+    │           │   ├── MethodMatcher.java
+    │           │   ├── Pointcut.java
+    │           │   └── TargetSource.java
+    │           ├── beans
+    │           │   ├── factory
+    │           │   │   ├── config
+    │           │   │   │   ├── AutowireCapableBeanFactory.java
+    │           │   │   │   ├── BeanDefinition.java
+    │           │   │   │   ├── BeanFactoryPostProcessor.java
+    │           │   │   │   ├── BeanPostProcessor.java
+    │           │   │   │   ├── BeanReference.java
+    │           │   │   │   ├── ConfigurableBeanFactory.java
+    │           │   │   │   └── SingletonBeanRegistry.java
+    │           │   │   ├── support
+    │           │   │   │   ├── AbstractAutowireCapableBeanFactory.java
+    │           │   │   │   ├── AbstractBeanDefinitionReader.java
+    │           │   │   │   ├── AbstractBeanFactory.java
+    │           │   │   │   ├── BeanDefinitionReader.java
+    │           │   │   │   ├── BeanDefinitionRegistry.java
+    │           │   │   │   ├── CglibSubclassingInstantiationStrategy.java
+    │           │   │   │   ├── DefaultListableBeanFactory.java
+    │           │   │   │   ├── DefaultSingletonBeanRegistry.java
+    │           │   │   │   ├── DisposableBeanAdapter.java
+    │           │   │   │   ├── FactoryBeanRegistrySupport.java
+    │           │   │   │   ├── InstantiationStrategy.java
+    │           │   │   │   └── SimpleInstantiationStrategy.java
+    │           │   │   ├── support
+    │           │   │   │   └── XmlBeanDefinitionReader.java
+    │           │   │   ├── Aware.java
+    │           │   │   ├── BeanClassLoaderAware.java
+    │           │   │   ├── BeanFactory.java
+    │           │   │   ├── BeanFactoryAware.java
+    │           │   │   ├── BeanNameAware.java
+    │           │   │   ├── ConfigurableListableBeanFactory.java
+    │           │   │   ├── DisposableBean.java
+    │           │   │   ├── FactoryBean.java
+    │           │   │   ├── HierarchicalBeanFactory.java
+    │           │   │   ├── InitializingBean.java
+    │           │   │   └── ListableBeanFactory.java
+    │           │   ├── BeansException.java
+    │           │   ├── PropertyValue.java
+    │           │   └── PropertyValues.java
+    │           ├── context
+    │           │   ├── event
+    │           │   │   ├── AbstractApplicationEventMulticaster.java
+    │           │   │   ├── ApplicationContextEvent.java
+    │           │   │   ├── ApplicationEventMulticaster.java
+    │           │   │   ├── ContextClosedEvent.java
+    │           │   │   ├── ContextRefreshedEvent.java
+    │           │   │   └── SimpleApplicationEventMulticaster.java
+    │           │   ├── support
+    │           │   │   ├── AbstractApplicationContext.java
+    │           │   │   ├── AbstractRefreshableApplicationContext.java
+    │           │   │   ├── AbstractXmlApplicationContext.java
+    │           │   │   ├── ApplicationContextAwareProcessor.java
+    │           │   │   └── ClassPathXmlApplicationContext.java
+    │           │   ├── ApplicationContext.java
+    │           │   ├── ApplicationContextAware.java
+    │           │   ├── ApplicationEvent.java
+    │           │   ├── ApplicationEventPublisher.java
+    │           │   ├── ApplicationListener.java
+    │           │   └── ConfigurableApplicationContext.java
+    │           ├── core.io
+    │           │   ├── ClassPathResource.java
+    │           │   ├── DefaultResourceLoader.java
+    │           │   ├── FileSystemResource.java
+    │           │   ├── Resource.java
+    │           │   ├── ResourceLoader.java
+    │           │   └── UrlResource.java
+    │           └── utils
+    │               └── ClassUtils.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   ├── IUserService.java
+                │   ├── UserService.java
+                │   └── UserServiceInterceptor.java
+                └── ApiTest.java
 
-
-
+# aop整合到spring框架中
+small-spring-step-12
+└── src
+    ├── main
+    │   └── java
+    │       └── cn.bugstack.springframework
+    │           ├── aop
+    │           │   ├── aspectj
+    │           │   │   └── AspectJExpressionPointcut.java
+    │           │   │   └── AspectJExpressionPointcutAdvisor.java
+    │           │   ├── framework
+    │           │   │   ├── adapter
+    │           │   │   │   └── MethodBeforeAdviceInterceptor.java
+    │           │   │   ├── autoproxy
+    │           │   │   │   └── DefaultAdvisorAutoProxyCreator.java
+    │           │   │   ├── AopProxy.java
+    │           │   │   ├── Cglib2AopProxy.java
+    │           │   │   ├── JdkDynamicAopProxy.java
+    │           │   │   ├── ProxyFactory.java
+    │           │   │   └── ReflectiveMethodInvocation.java
+    │           │   ├── AdvisedSupport.java
+    │           │   ├── Advisor.java
+    │           │   ├── BeforeAdvice.java
+    │           │   ├── ClassFilter.java
+    │           │   ├── MethodBeforeAdvice.java
+    │           │   ├── MethodMatcher.java
+    │           │   ├── Pointcut.java
+    │           │   ├── PointcutAdvisor.java
+    │           │   └── TargetSource.java
+    │           ├── beans
+    │           │   ├── factory
+    │           │   │   ├── config
+    │           │   │   │   ├── AutowireCapableBeanFactory.java
+    │           │   │   │   ├── BeanDefinition.java
+    │           │   │   │   ├── BeanFactoryPostProcessor.java
+    │           │   │   │   ├── BeanPostProcessor.java
+    │           │   │   │   ├── BeanReference.java
+    │           │   │   │   ├── ConfigurableBeanFactory.java
+    │           │   │   │   ├── InstantiationAwareBeanPostProcessor.java
+    │           │   │   │   └── SingletonBeanRegistry.java
+    │           │   │   ├── support
+    │           │   │   │   ├── AbstractAutowireCapableBeanFactory.java
+    │           │   │   │   ├── AbstractBeanDefinitionReader.java
+    │           │   │   │   ├── AbstractBeanFactory.java
+    │           │   │   │   ├── BeanDefinitionReader.java
+    │           │   │   │   ├── BeanDefinitionRegistry.java
+    │           │   │   │   ├── CglibSubclassingInstantiationStrategy.java
+    │           │   │   │   ├── DefaultListableBeanFactory.java
+    │           │   │   │   ├── DefaultSingletonBeanRegistry.java
+    │           │   │   │   ├── DisposableBeanAdapter.java
+    │           │   │   │   ├── FactoryBeanRegistrySupport.java
+    │           │   │   │   ├── InstantiationStrategy.java
+    │           │   │   │   └── SimpleInstantiationStrategy.java
+    │           │   │   ├── support
+    │           │   │   │   └── XmlBeanDefinitionReader.java
+    │           │   │   ├── Aware.java
+    │           │   │   ├── BeanClassLoaderAware.java
+    │           │   │   ├── BeanFactory.java
+    │           │   │   ├── BeanFactoryAware.java
+    │           │   │   ├── BeanNameAware.java
+    │           │   │   ├── ConfigurableListableBeanFactory.java
+    │           │   │   ├── DisposableBean.java
+    │           │   │   ├── FactoryBean.java
+    │           │   │   ├── HierarchicalBeanFactory.java
+    │           │   │   ├── InitializingBean.java
+    │           │   │   └── ListableBeanFactory.java
+    │           │   ├── BeansException.java
+    │           │   ├── PropertyValue.java
+    │           │   └── PropertyValues.java
+    │           ├── context
+    │           │   ├── event
+    │           │   │   ├── AbstractApplicationEventMulticaster.java
+    │           │   │   ├── ApplicationContextEvent.java
+    │           │   │   ├── ApplicationEventMulticaster.java
+    │           │   │   ├── ContextClosedEvent.java
+    │           │   │   ├── ContextRefreshedEvent.java
+    │           │   │   └── SimpleApplicationEventMulticaster.java
+    │           │   ├── support
+    │           │   │   ├── AbstractApplicationContext.java
+    │           │   │   ├── AbstractRefreshableApplicationContext.java
+    │           │   │   ├── AbstractXmlApplicationContext.java
+    │           │   │   ├── ApplicationContextAwareProcessor.java
+    │           │   │   └── ClassPathXmlApplicationContext.java
+    │           │   ├── ApplicationContext.java
+    │           │   ├── ApplicationContextAware.java
+    │           │   ├── ApplicationEvent.java
+    │           │   ├── ApplicationEventPublisher.java
+    │           │   ├── ApplicationListener.java
+    │           │   └── ConfigurableApplicationContext.java
+    │           ├── core.io
+    │           │   ├── ClassPathResource.java
+    │           │   ├── DefaultResourceLoader.java
+    │           │   ├── FileSystemResource.java
+    │           │   ├── Resource.java
+    │           │   ├── ResourceLoader.java
+    │           │   └── UrlResource.java
+    │           └── utils
+    │               └── ClassUtils.java
+    └── test
+        └── java
+            └── cn.bugstack.springframework.test
+                ├── bean
+                │   ├── IUserService.java
+                │   ├── UserService.java
+                │   └── UserServiceInterceptor.java
+                └── ApiTest.java
 
 
 

@@ -21,4 +21,9 @@
         <property name="location" value="深圳"/>
         <property name="userDao" ref="userDao"/>
     </bean>
+
+
+    <bean class="com.atws.test.event.ContextClosedEventListener"/>
+    <bean class="com.atws.test.event.ContextRefreshedEventListener"/>
+    <bean class="com.atws.test.event.CustomEventListener"/>
 </beans>
